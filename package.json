@@ -1,0 +1,68 @@
+{
+  "name": "grimoirejs-webvr",
+  "version": "1.0.0",
+  "description": "The web vr extension for grimoire.js",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "inquisitor",
+    "start": "cauldron build --watch --server",
+    "build": "cauldron build",
+    "prepublish": "cauldron build --babelSeparated && inquisitor && npm run doc",
+    "doc": "cauldron doc",
+    "scaffold": "cauldron scaffold"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrimoireGL/grimoirejs-webvr.git"
+  },
+  "keywords": [
+    "grimoire"
+  ],
+  "author": "kyasbal-1994",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GrimoireGL/grimoirejs-webvr/issues"
+  },
+  "homepage": "https://github.com/GrimoireGL/grimoirejs-webvr#readme",
+  "typings": "./lib/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "lib-es5"
+  ],
+  "grimoire": {
+    "isPlugin": true,
+    "ts": {
+      "lib": "./lib",
+      "temp": "./lib-ts",
+      "src": "./src",
+      "es5": "./lib-es5"
+    },
+    "main": "index.ts",
+    "test": {
+      "defaultGlob": "**/*Test.js",
+      "src": "./test",
+      "temp": "./lib-test"
+    },
+    "out": {
+      "es6": "./product/grimoire.es2016.js",
+      "es5": "./product/grimoire.js"
+    },
+    "txt-exts": [
+      ".txt",
+      ".html",
+      ".goml",
+      ".sort"
+    ],
+    "doc": {
+      "src": "./doc",
+      "header": "./doc/header.md",
+      "footer": "./doc/footer.md",
+      "dest": "./README.md"
+    }
+  },
+  "devDependencies": {
+    "grimoirejs-cauldron": "^1.5.7",
+    "grimoirejs-inquisitor": "^1.0.3"
+  }
+}
