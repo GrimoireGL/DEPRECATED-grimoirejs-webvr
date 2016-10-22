@@ -1,0 +1,24 @@
+@Pass
+
+varying vec3 vNormal;
+
+@vert{
+  attribute vec3 position;
+  attribute vec3 normal;
+  uniform mat4 _matPVM;
+  uniform mat4 _matM;
+
+  void main(){
+    vNormal = normalize((_matM*vec4(normal,0)).xyz);
+    gl_Position = _matPVM * vec4(position,1);
+  }
+}
+
+@frag{
+
+  uniform float _time;
+  
+  void main(){
+    gl_FragColor = vec4(vNormal,1);
+  }
+}

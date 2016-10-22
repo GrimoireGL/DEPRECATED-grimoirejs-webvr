@@ -1,5 +1,6 @@
 // Please do not change the name of variable on the line below.
 import GrimoireInterface from "grimoirejs";
+import ResourceRegisterer from "./Utils/ResourceRegisterer";
 // IMPORTS would be replaced for importing components.
 //<%=IMPORTS%>
 
@@ -8,8 +9,5 @@ GrimoireInterface.register(async () => {
   //<%=REGISTER%>
 
   // You can edit code here.
-
-
-
-
+  ResourceRegisterer.register();
 });

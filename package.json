@@ -63,6 +63,8 @@
   },
   "devDependencies": {
     "grimoirejs-cauldron": "^1.5.7",
-    "grimoirejs-inquisitor": "^1.0.3"
+    "grimoirejs-fundamental": "^0.3.13",
+    "grimoirejs-inquisitor": "^1.0.3",
+    "webvr-polyfill": "^0.9.3"
   }
 }

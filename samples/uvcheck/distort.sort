@@ -1,0 +1,42 @@
+@Pass
+varying vec2 vUV;
+@vert{
+  attribute vec3 position;
+
+
+  void main(){
+    vUV = position.xy;
+    gl_Position = vec4(position,1);
+  }
+}
+
+@frag{
+
+  uniform sampler2D source;
+
+  uniform vec2 offset;
+
+  @{default:"1"}
+  uniform float lensScale;
+
+  @{default:"0.33582564,0.55348791"}
+  uniform vec2 kCoefficents;
+
+vec2 distort(vec2 p)
+{
+  float r2 = pow(p.x,2.0)+pow(p.y,2.0);
+  float kk = (1.0 + kCoefficents.x * r2 + kCoefficents.y* pow(r2,2.0));
+  vec2 cp = p * kk;
+  vec2 fc = (cp/lensScale + offset + vec2(1))/2.;
+  return fc;
+}
+
+  void main(){
+    vec2 cv =distort(vUV);
+    if(cv.x > 1.0 || cv.y >1.0 || cv.x < 0. || cv.y < 0.){
+      gl_FragColor = vec4(0,0,0,1);
+    }else{
+    gl_FragColor = texture2D(source,cv);
+  }
+  }
+}
