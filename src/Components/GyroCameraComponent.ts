@@ -33,12 +33,12 @@ export default class GyroCameraComponent extends Component {
         const array: number[] = [1, 1, 1];
         if (this.node.enabled) {
             for (let i = 0; i < 3; i++) {
-                array[i] *= this._config.charAt(2 * i) == "+" ? 1 : -1;
+                array[i] = this._config.charAt(2 * i) == "+" ? 1 : -1;
                 if (this._config.charAt(2 * i + 1) == "X") {
-                    array[1] *= value[i];
+                    array[0] = array[0] * value[i];
                 } else if (this._config.charAt(2 * i + 1) == "Y") {
-                    array[2] *= value[i];
-                } else { array[3] *= value[i]; }
+                    array[1] = array[1] * value[i];
+                } else { array[2] = array[2] * value[i]; }
             }
             this._transform.localRotation = Quaternion.multiply(this._baseRotation, Quaternion.euler(array[0] / 180 * Math.PI, array[1] / 180 * Math.PI, array[2] / 180 * Math.PI));
         }
