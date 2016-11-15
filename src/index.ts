@@ -1,13 +1,21 @@
-// Please do not change the name of variable on the line below.
-import GrimoireInterface from "grimoirejs";
-import ResourceRegisterer from "./Utils/ResourceRegisterer";
-// IMPORTS would be replaced for importing components.
-//<%=IMPORTS%>
+  import ComponentsGyroCameraComponent from "./Components/GyroCameraComponent";
+  import UtilsResourceRegisterer from "./Utils/ResourceRegisterer";
 
-GrimoireInterface.register(async () => {
-  // REGISTER would be replaced to actual codes to register components.
-  //<%=REGISTER%>
+import __MAIN__ from "./main"
 
-  // You can edit code here.
-  ResourceRegisterer.register();
-});
+var __EXPOSE__ = {
+  "Components": {
+    "GyroCameraComponent": ComponentsGyroCameraComponent
+  },
+  "Utils": {
+    "ResourceRegisterer": UtilsResourceRegisterer
+  }
+};
+
+let __BASE__ = __MAIN__();
+
+Object.assign(__BASE__|| {},__EXPOSE__);
+
+window["GrimoireJS"].lib.webvr = __EXPOSE__;
+
+export default __BASE__;

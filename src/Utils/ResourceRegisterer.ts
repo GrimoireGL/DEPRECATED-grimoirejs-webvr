@@ -1,7 +1,7 @@
-import EnvUniformResolver from "grimoirejs-fundamental/lib/Material/EnvUniformValueResolver";
-import GeometryBuilder from "grimoirejs-fundamental/lib/Geometry/GeometryBuilder";
-import GeometryFactory from "grimoirejs-fundamental/lib/Geometry/GeometryFactory";
-import GeometryUtility from "grimoirejs-fundamental/lib/Geometry/GeometryUtility";
+import EnvUniformResolver from "grimoirejs-fundamental/ref/Material/EnvUniformValueResolver";
+import GeometryBuilder from "grimoirejs-fundamental/ref/Geometry/GeometryBuilder";
+import GeometryFactory from "grimoirejs-fundamental/ref/Geometry/GeometryFactory";
+import GeometryUtility from "grimoirejs-fundamental/ref/Geometry/GeometryUtility";
 
 export default class ResourceRegisterer {
   public static register(): void {

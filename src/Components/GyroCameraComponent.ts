@@ -1,7 +1,7 @@
-import TransformComponent from "grimoirejs-fundamental/lib/Components/TransformComponent";
-import Component from "grimoirejs/lib/Node/Component";
-import IAttributeDeclaration from "grimoirejs/lib/Node/IAttributeDeclaration";
-import {Quaternion} from "grimoirejs-math";
+import TransformComponent from "grimoirejs-fundamental/ref/Components/TransformComponent";
+import Component from "grimoirejs/ref/Node/Component";
+import IAttributeDeclaration from "grimoirejs/ref/Node/IAttributeDeclaration";
+import Quaternion from "grimoirejs-math/ref/Quaternion";
 
 export default class GyroCameraComponent extends Component {
   public static attributes: { [key: string]: IAttributeDeclaration } = {
