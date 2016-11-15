@@ -1,19 +1,20 @@
 <goml width="1024" height="512">
   <import-material type="normal" src="./normal.sort"/>
   <import-material type="distort" src="./distort.sort"/>
-
+  <import-material type="skybox" src="./skybox.sort"/>
   <renderer viewport="0,0,50%,100%" camera="#left">
+    <render-buffer name="depth"/>
     <texture-buffer name="main"/>
     <render-scene out="main"/>
     <render-quad material="new(distort)" source="backbuffer(main)" lensScale="1.3"/>
   </renderer>
   <renderer viewport="50%,0,50%,100%" camera="#right">
+    <render-buffer name="depth"/>
     <texture-buffer name="main"/>
-    <render-scene out="main"/>
     <render-quad material="new(distort)" source="backbuffer(main)" lensScale="1.3"/>
   </renderer>
   <scene>
-    <mesh position="0,0,10">
+    <mesh position="0,0,0">
       <mesh.components>
         <GyroCamera baseRotation="x(-90d)" enabled="false"/>
       </mesh.components>
@@ -23,5 +24,6 @@
       </camera>
     </mesh>
     <mesh material="new(normal)" geometry="cube" rotation="y(30d)"/>
+    <mesh material="new(skybox)" geometry="sphere" scale="50" texture="./theta.jpg"/>
   </scene>
 </goml>
