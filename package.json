@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --watch --progress",
     "test": "tsc --outDir ./lib && babel ./lib --presets es2015  --plugin transform-runtime --out-dir ./lib-es5 && babel ./test --presets es2015  --plugin transform-runtime --out-dir ./test-es5 && ava ./test-es5/**/*Test.js --verbose ",
     "bundle": "webpack --progress --watch",
-    "prepublish": "npm run build&&npm test",
+    "prepublish": "npm run build&&cauldron doc",
     "build": "webpack --progress",
     "generate-expose": "cauldron generate-exposure --src ./src --dest ./src/index.ts --ts --main ./src/main.ts --dts ./ref",
     "generate-reference": "cauldron generate-reference --src ./src --dest ./src/index.ts --ts --main ./src/main.ts --dts ./ref"
@@ -27,9 +27,9 @@
   "homepage": "https://github.com/GrimoireGL/grimoirejs-webvr#readme",
   "typings": "./lib/index.d.ts",
   "files": [
-    "src",
-    "lib",
-    "lib-es5"
+    "ref",
+    "register",
+    "src"
   ],
   "grimoire": {
     "isPlugin": true,
