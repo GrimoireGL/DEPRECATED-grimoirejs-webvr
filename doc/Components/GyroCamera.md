@@ -7,6 +7,7 @@
 | 属性名 | コンバーター | デフォルト値 | その他 |
 |:------:|:------:|:------:|:------:|
 | baseRotation | Rotation3 | "z(90d)" | なし |
+| config | String | "+Y+X-Z" | なし |
 
 <!-- /ATTRS -->
 <!-- /DO NOT EDIT -->
@@ -16,4 +17,11 @@
  * `defaultValue`: "z(90d)"
 
 <!-- EDIT HERE(baseRotation)-->
+<!-- /EDIT HERE-->
+### config 属性
+
+ * `converter`: String
+ * `defaultValue`: "+Y+X-Z"
+
+<!-- EDIT HERE(config)-->
 <!-- /EDIT HERE-->
