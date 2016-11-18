@@ -1,6 +1,6 @@
 {
   "name": "grimoirejs-webvr",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The web vr extension for grimoire.js",
   "main": "./ref/index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "url": "https://github.com/GrimoireGL/grimoirejs-webvr/issues"
   },
   "homepage": "https://github.com/GrimoireGL/grimoirejs-webvr#readme",
-  "typings": "./lib/index.d.ts",
+  "typings": "./ref/index.d.ts",
   "files": [
     "ref",
     "register",
