@@ -1,4 +1,6 @@
 # webvr
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/GrimoireGL/grimoirejs-webvr.svg)](https://greenkeeper.io/)
 > The web vr extension for grimoire.js
 
 Describe about this package here.
